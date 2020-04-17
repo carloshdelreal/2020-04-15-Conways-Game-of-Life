@@ -18,15 +18,15 @@ test('returns the cell value', () => {
   expect(g.getCellValue(-1, -1)).toBe(9);
 });
 
-describe("Validate Coords", () => {
+describe('Validate Coords', () => {
   test('validate 3,3 coords on 3x3 matrix', () => {
     const g = gridLife([
       [0, 0, 0],
       [0, 1, 0],
       [0, 0, 1]]);
-    expect(g.validateCoords(3, 3)).toStrictEqual({xValid: 0, yValid: 0});
-  })
-})
+    expect(g.validateCoords(3, 3)).toStrictEqual({ xValid: 0, yValid: 0 });
+  });
+});
 
 test('returns the surrounding Values', () => {
   const g = gridLife([
@@ -56,7 +56,7 @@ test('count surrounding lives', () => {
   expect(g.countSurroundingLives(0, 0)).toBe(0);
 });
 
-describe("live or dies", () => {
+describe('live or dies', () => {
   test('the cell dies', () => {
     const g = gridLife([
       [0, 0, 0, 0, 0],
@@ -64,15 +64,15 @@ describe("live or dies", () => {
       [0, 0, 1, 0, 0],
       [0, 0, 1, 0, 0],
       [0, 0, 0, 0, 0]]);
-    expect(g.liveOrDies(1,2)).toBe(0);
-    expect(g.getSurroundingValues(0, 0)).toStrictEqual([0,0,0,0,0,0,0,0])
-    expect(g.countSurroundingLives(2,2)).toBe(2);
-    expect(g.liveOrDies(2,2)).toBe(1);
-    expect(g.liveOrDies(2,1)).toBe(1);
-  })
-})
+    expect(g.liveOrDies(1, 2)).toBe(0);
+    expect(g.getSurroundingValues(0, 0)).toStrictEqual([0, 0, 0, 0, 0, 0, 0, 0]);
+    expect(g.countSurroundingLives(2, 2)).toBe(2);
+    expect(g.liveOrDies(2, 2)).toBe(1);
+    expect(g.liveOrDies(2, 1)).toBe(1);
+  });
+});
 
-describe("Grid nextGen Tests", () => {  
+describe('Grid nextGen Tests', () => {
   test('next generation grid size is ok', () => {
     const g = gridLife([
       [0, 1, 0],
@@ -96,5 +96,4 @@ describe("Grid nextGen Tests", () => {
       [0, 0, 0, 0, 0]];
     expect(g.genNext()).toStrictEqual(result);
   });
-})
-
+});
